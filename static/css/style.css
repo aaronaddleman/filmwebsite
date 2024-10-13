@@ -10,6 +10,11 @@
  nav .brand-logo {
    color: #444;
  }
+
+nav {
+    height: 157px; /* Control the navbar height */
+    line-height: 157px; /* Vertically center content */
+}
  
  p {
    line-height: 2rem;
@@ -50,14 +55,17 @@
    }
  }
  
- .icon-block {
-   padding: 0 15px;
- }
- .icon-block .material-icons {
-   font-size: inherit;
- }
+.icon-block {
+    padding: 0 15px;
+}
+.icon-block .material-icons {
+    font-size: inherit;
+}
  
- footer.page-footer {
-   margin: 0;
- }
+footer.page-footer {
+    margin: 0;
+}
  
+.brand-logo img {
+    height: 164px;
+}

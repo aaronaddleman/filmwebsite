@@ -11,26 +11,44 @@
   <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Odd Fx</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
+  <div class="navbar-fixed">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">Odd Fx</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#lookbook" class="scroll-link">Lookbook</a></li>
+            <li><a href="#about" class="scroll-link">About</a></li>
+            <li><a href="#section3" class="scroll-link">Team</a></li>
+            <li><a href="#section4">Gallery</a></li>
+            <li><a href="#section4">Blog</a></li>
+            <li><a href="#section4">Supporters</a></li>
+            <li><a href="#section4">Contribute</a></li>
+            <li><a href="#section4">Contact</a></li>
+        </ul>
 
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+        <ul id="nav-mobile" class="sidenav">
+            <li><a href="#lookbook" class="scroll-link">Lookbook</a></li>
+            <li><a href="#about" class="scroll-link">About</a></li>
+            <li><a href="#section3" class="scroll-link">Team</a></li>
+            <li><a href="#section4">Gallery</a></li>
+            <li><a href="#section4">Blog</a></li>
+            <li><a href="#section4">Supporters</a></li>
+            <li><a href="#section4">Contribute</a></li>
+            <li><a href="#section4">Contact</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+  </div>
 
   <div class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
-        <div class="row center">
-          <h2 class="header col s12 light lookbookImgTxt">A mother must win</h2>
-        </div>
+        <section id="lookbook" class="scrollspy"></section>
+            <div class="row center">
+                <h2 class="header col s12 light lookbookImgTxt">A mother must win</h2>
+            </div>
+        </section>
       </div>
     </div>
     <div class="parallax"><img src="/lookbook1.avif" alt="Unsplashed background img 1"></div>
@@ -76,16 +94,32 @@
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
-        <div class="row">
-            <h2 class="header col s8 m8 light lookbookImgTxt">A mother living in a women’s shelter, battling a physically abusive husband and a broken support system, enlists the help of a special FX film crew to defend against his attacks and save her children.</h2>
-        </div>
+        <section id="about" class="scrollspy">
+            <div class="row">
+                <!-- Use 'offset-sN' to shift the div left -->
+                <div class="col s8 offset-s4">
+                    <div class="white-text">
+                        <h2>
+                            A mother living in a women’s shelter, battling 
+                            a physically abusive husband and a broken support 
+                            system, enlists the help of a special FX film crew 
+                            to defend against his attacks and save her children.
+                        </h2>
+                    </div>
+                </div>
+            </div>    
+        </section>
       </div>
     </div>
-    <div class="parallax"><img src="/lookbook4.avif" alt="Unsplashed background img 2"></div>
+    <div class="parallax">
+        <img 
+        src="/lookbook4.avif" 
+        alt="Unsplashed background img 2" 
+        style="transform: translateX(-500px); object-fit: cover; width: 100%;" 
+      />
+    </div>
   </div>
   
-
-
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="/js/materialize.js"></script>
