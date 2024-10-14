@@ -1,0 +1,17 @@
+<div class="parallax-container">
+    <div class="parallax">
+      <img src="{{ .image }}" alt="Parallax image" class="parallax-img">
+    </div>
+    <div class="text-overlay">
+      <div class="row h-100 align-items-center">
+        <div class="col-2 no-padding">
+          <h2 style="font-size: 20; color: rgb(180, 148, 116)">logline</h2>
+
+          <h2 style="font-size: {{ .textSize | default "clamp(24px, 4vw, 60px)" }};">
+            {{ .text }}
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  

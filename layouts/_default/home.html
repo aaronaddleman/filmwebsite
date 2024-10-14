@@ -1,20 +1,43 @@
 {{ define "main" }}
-  <main aria-role="main">
-    <header class="home-page-header">
-      <h1>{{ .Title }}</h1>
-      {{ with .Params.subtitle }}
-        <span class="subtitle">{{ . }}</span>
-      {{ end }}
-    </header>
-    <div class="home-page-content">
-      home.html
-      <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
-      {{ .Content }}
+
+{{ partial "parallax.html" (dict "image" "/lookbook1.avif" "text" "A mother must win") }}
+
+{{ partial "parallax.html" (dict "image" "/lookbook2.avif" "text" "They only get one childhood") }}
+  
+{{ partial "parallax.html" (dict "image" "/lookbook3.avif" "text" "It shouldn't be like this") }}
+
+{{ partial "parallax_4.html" (dict "image" "/lookbook4.avif" "text" "A mother living in a women’s shelter, battling a physically abusive husband and a broken support system, enlists the help of a special FX film crew to defend against his attacks and save her children." "textSize" "30px") }}
+
+<div class="parallax-container">
+    <div class="parallax">
+      <img src="/lookbook5.avif" alt="Parallax image" class="parallax-img">
     </div>
-    <div>
-      {{ range first 10 .Site.RegularPages }}
-        {{ .Render "summary" }}
-      {{ end }}
+    <div class="text-overlay">
+        <div class="row h-100 align-items-center justify-content-end">
+            <div class="col-2 no-padding">
+                <h2 style="font-size: 10; color: rgb(180, 148, 116)">synopsis</h2>
+                <h2 style="font-size: 15; line-height: normal;">
+                    Cady Langton, a fiercely protective mother and 
+                    talented camerawoman, finds herself at a crisis point
+                    when her abusive husband's attacks cause her and her 
+                    children, Prism and Parker, to flee to a women’s shelter. 
+                    Determined to give her children a safe childhood, but 
+                    low on resources, Cady grabs the only helping hands she 
+                    can find; the guys at a special FX film company. Can she
+                    get them to step out of their imaginary world to help her
+                    in her very real world?
+              </h2>
+            </div>
+        </div>
     </div>
-  </main>
+  </div>
+  
+  <div class="container my-5">
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat.</p>
+    </section>
+  </div>
+
+  
 {{ end }}
