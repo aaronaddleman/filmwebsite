@@ -1,34 +1,46 @@
-(function ($) {
-    $(function () {
-      // Initialize Sidenav
-      $('.sidenav').sidenav();
-  
-      // Initialize Parallax
-      $('.parallax').parallax();
-  
-      // Initialize ScrollSpy
-      $('.scrollspy').scrollSpy({
-        scrollOffset: 64, // Adjust to match your navbar height
+document.addEventListener('DOMContentLoaded', function () {
+    // Adjust parallax sections on window resize
+    function adjustParallax() {
+      document.querySelectorAll('.parallax-container').forEach(container => {
+        container.style.width = `${window.innerWidth}px`;
+        container.style.height = `${window.innerHeight}px`;
       });
+    }
   
-      // Smooth Scrolling with Slower Speed
-      $('.scroll-link').on('click', function (e) {
-        e.preventDefault(); // Prevent default anchor behavior
-        e.stopPropagation(); // Stop other scroll events from triggering
+    window.addEventListener('resize', adjustParallax);
+    adjustParallax(); // Initial adjustment on load
   
-        const targetId = $(this).attr('href').substring(1); // Get target ID
-        const targetOffset = $(`#${targetId}`).offset().top - 64; // Adjust for navbar height
+    // Smooth scrolling for navbar links
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
   
-        // Stop any ongoing animations and scroll smoothly
-        $('html, body').stop().animate(
-          { scrollTop: targetOffset },
-          2000, // Duration in milliseconds (2 seconds)
-          'swing', // Easing function for smooth transition
-          function () {
-            console.log(`Scrolled to #${targetId} successfully.`);
+        // Handle only internal links (e.g., #about or /gallery)
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const targetId = href.substring(1);
+          const target = document.getElementById(targetId);
+  
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 70, // Adjust for navbar height
+              behavior: 'smooth',
+            });
           }
-        );
+        }
       });
-    }); // end of document ready
-  })(jQuery); // end of jQuery namespace
+    });
+  
+    // Close mobile navbar after clicking a link
+    const navbarLinks = document.querySelectorAll('.nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+  
+    navbarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navbarCollapse.classList.contains('show')) {
+          new bootstrap.Collapse(navbarCollapse).toggle(); // Close the navbar collapse
+        }
+      });
+    });
+  });
   

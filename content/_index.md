@@ -1,5 +1,5 @@
 +++
-title = "OddFx Films"
-layout = "pushpin"
+title = "Home"
 +++
-testing post
+
+This is the home page content.
